@@ -9,22 +9,33 @@ function Header(){
   }
 
   const banner = {
-    position: "absolute",
-    left: "0px",
-    top: "0px",
-    zIndex: "-1",
-    width: "100vw",
+  }
+
+  const bannerText = {
+    fontSize: "84px",
+    textAlign: 'center',
+    color: 'rgb(240,125,0)',
+  }
+
+  const menuText = {
+    textAlign: 'left'
   }
   return (
     <div style={headerstyle}>
-      <div style={banner}>
-        <h1> The Vanguard Taproom </h1>
-        <Link to="/">Home</Link> | <Link to="/newkeg">Create New Keg</Link>
-        <img src={bannerPic}/>
-      </div>
-
+    <div style={banner}>
+    <img src={bannerPic}/>
     </div>
-  );
-}
+    <h1 style={bannerText}> The Vanguard Taproom </h1>
+    <div style={menuText}>
+    <Link to="/">Home</Link> | <Link to="/newkeg">Create New Keg</Link>
+    <style jsx>{`
+      a:visited {
+        color:#f8f8f8
+      }
+      `}</style>
+      </div>
+      </div>
+    );
+  }
 
-export default Header;
+  export default Header;
