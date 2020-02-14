@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from "./Header";
+import KegList from './KegList';
+import NewKegForm from './NewKegForm';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){
@@ -15,6 +16,10 @@ function App(){
   return (
     <div style={allStyle}>
       <Header/>
+      <Switch>
+<Route exact path='/' component={KegList} />
+<Route path='/newkeg' component={NewKegForm} />
+</Switch>
 
     </div>
   );
