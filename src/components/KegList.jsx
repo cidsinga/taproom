@@ -5,7 +5,7 @@ var masterKegList = [
   {
     name: "Deathbringer Stout",
     brand: "Shaxx's Swill",
-    price: 5.00,
+    price: 6.00,
     alchoholcontent: 7,
     availablepints: 124,
   },
@@ -19,7 +19,7 @@ var masterKegList = [
   {
     name: "Heros Burden",
     brand: "Omelon Brewing",
-    price: 5.00,
+    price: 7.00,
     alchoholcontent: 7,
     availablepints: 124,
   },

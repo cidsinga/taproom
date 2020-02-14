@@ -4,16 +4,16 @@ import PropTypes from "prop-types";
 
 function Keg(props){
   var kegStyle = {
-    textAlign: 'right',
+    textAlign: 'center',
     textDecoration: 'underline',
   }
   return (
     <div style={kegStyle}>
     <h3>{props.brand} - {props.name}</h3>
-    <p><em>{props.price}</em></p>
+    <p><em>${props.price}</em></p>
     <hr/>
     </div>
-
+    
   );
 }
 
