@@ -9,6 +9,7 @@ function Header(){
   }
 
   const banner = {
+    width: '100vw'
   }
 
   const bannerText = {

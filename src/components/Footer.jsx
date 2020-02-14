@@ -1,15 +1,17 @@
 import React from "react";
-import footerPic from './casks11.jpg';
+import footerPic from './tap2.jpg';
 
 
 function Footer(){
+
   const footerStyle = {
-    width: "100vw",
+    width: '100vw'
+
 
   }
 
   return (
-    <div>
+    <div style={footerStyle}>
       <img src={footerPic}/>
     </div>
 
