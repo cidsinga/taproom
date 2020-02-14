@@ -10,10 +10,11 @@ function Keg(props){
   return (
     <div style={kegStyle}>
     <h3>{props.brand} - {props.name}</h3>
-    <p><em>${props.price}</em></p>
+    <p><em>${props.price}/pint</em></p>
+    <p><em>{props.alchoholcontent}% ABV</em></p>
     <hr/>
     </div>
-    
+
   );
 }
 
