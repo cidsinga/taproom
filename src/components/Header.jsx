@@ -6,6 +6,7 @@ function Header(){
 
   const headerstyle = {
     textAlign: 'center',
+
   }
 
   const banner = {
@@ -16,6 +17,8 @@ function Header(){
     fontSize: "84px",
     textAlign: 'center',
     color: 'rgb(240,125,0)',
+        fontFamily: "Kanit",
+
   }
 
   const menuText = {
