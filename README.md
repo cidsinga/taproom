@@ -4,7 +4,7 @@
 
 ## Description
 Site for a fictional taproom, tracks inventory of beers on tap.  Currently this a stateless React app, but state will be implemented.
-![alt text](IMG_4368)
+
 
 
 ## Known Bugs
