@@ -16,7 +16,6 @@ function NewKegForm(props){
     _price.value = '';
     _alchoholcontent.value = '';
   }
-
   return (
     <div>
       <form onSubmit={handleNewKegFormSubmission}>
