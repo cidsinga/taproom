@@ -1,5 +1,6 @@
 import React from "react";
 import Keg from "./Keg"
+import PropTypes from 'prop-types';
 
 var masterKegList = [
   {
@@ -26,7 +27,7 @@ var masterKegList = [
 ]
 
 
-function KegList(){
+function KegList(props){
   var listStyle = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
@@ -34,7 +35,7 @@ function KegList(){
   return (
       <div style={listStyle}>
 
-        {masterKegList.map((keg, index) =>
+        {props.KegList.map((keg, index) =>
           <Keg name={keg.name}
             brand={keg.brand}
             price={keg.price}
@@ -44,5 +45,9 @@ function KegList(){
       </div>
     );
   }
+
+  KegList.propTypes = {
+    kegList: PropTypes.array
+  };
 
   export default KegList;
