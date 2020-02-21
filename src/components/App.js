@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import NewKegControl from './NewKegControl';
 import Error404 from './Error404';
 import Footer from './Footer';
+import Admin from './Admin';
 
 class App extends React.Component {
 
@@ -37,6 +38,7 @@ class App extends React.Component {
         <Switch>
         <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
         <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+        <Route path='/admin' component={Admin} />
         <Route component={Error404} />
         </Switch>
         <Footer/>
