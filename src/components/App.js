@@ -1,19 +1,19 @@
-
 import React from 'react';
 import './App.css';
 import Header from "./Header";
 import KegList from './KegList';
 import NewKegForm from './NewKegForm';
 import { Switch, Route } from 'react-router-dom';
+import NewKegControl from './NewKegControl';
 import Error404 from './Error404';
 import Footer from './Footer';
 
 class App extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.state = {
-    masterKegList: []
+    super(props);
+    this.state = {
+      masterKegList: []
   };
   this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
 }
@@ -36,13 +36,9 @@ class App extends React.Component {
       <div style={allStyle}>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
-          // <Route path='/newkeg' component={NewKegForm} />
-
-          <Route path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
-
-
-          <Route component={Error404} />
+        <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
+        <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+        <Route component={Error404} />
         </Switch>
         <Footer/>
       </div>
