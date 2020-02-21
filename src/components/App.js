@@ -35,10 +35,13 @@ class App extends React.Component {
     return (
       <div style={allStyle}>
         <Header/>
-
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
-          <Route path='/newkeg' component={NewKegForm} />
+          // <Route path='/newkeg' component={NewKegForm} />
+
+          <Route path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
+
+
           <Route component={Error404} />
         </Switch>
         <Footer/>
@@ -46,5 +49,6 @@ class App extends React.Component {
     );
   }
 }
+
 
 export default App;
