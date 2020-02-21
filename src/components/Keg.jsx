@@ -12,6 +12,7 @@ function Keg(props){
       <h3>{props.brand} - {props.name}</h3>
       <p><em>${props.price}/pint</em></p>
       <p><em>{props.alchoholcontent}% ABV</em></p>
+      <p><em>{props.availablepints}Pints Available</em></p>
       <hr/>
     </div>
     if (props.currentRouterPath === '/admin'){
