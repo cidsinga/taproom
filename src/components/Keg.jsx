@@ -7,15 +7,26 @@ function Keg(props){
     textAlign: 'center',
     textDecoration: 'underline',
   }
-  return (
+  const kegInformation =
     <div style={kegStyle}>
-    <h3>{props.brand} - {props.name}</h3>
-    <p><em>${props.price}/pint</em></p>
-    <p><em>{props.alchoholcontent}% ABV</em></p>
-    <hr/>
+      <h3>{props.brand} - {props.name}</h3>
+      <p><em>${props.price}/pint</em></p>
+      <p><em>{props.alchoholcontent}% ABV</em></p>
+      <hr/>
     </div>
-
-  );
+    if (props.currentRouterPath === '/admin'){
+      return (
+        <div onClick={() => {alert('hey, you just clicked the keg belonging to ' + props.name);}}>
+          {kegInformation}
+        </div>
+    );
+  } else {
+    return (
+      <div>
+        {kegInformation}
+      </div>
+    );
+  }
 }
 
 Keg.propTypes = {
@@ -24,6 +35,7 @@ Keg.propTypes = {
   price: PropTypes.number.isRequired,
   alchoholcontent: PropTypes.string.isRequired,
   availablepints: PropTypes.number.isRequired,
+  currentRouterPath: PropTypes.string
 
 
 };
