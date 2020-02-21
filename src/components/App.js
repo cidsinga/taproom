@@ -16,11 +16,22 @@ class App extends React.Component {
       masterKegList: []
   };
   this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+  this.handleBuyPint = this.handleBuyPint.bind(this);
 }
 
   handleAddingNewKegToList(newKeg){
     var newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleBuyPint(id) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.forEach(function(keg) {
+      if (keg.id == id) {
+        keg.buypint --;
+      }
+    });
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -36,10 +47,10 @@ class App extends React.Component {
       <div style={allStyle}>
         <Header/>
         <Switch>
-        <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
-        <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
-        <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
-        <Route component={Error404} />
+          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
+          <Route component={Error404} />
         </Switch>
         <Footer/>
       </div>

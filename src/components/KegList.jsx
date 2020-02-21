@@ -19,7 +19,7 @@ function KegList(props){
             brand={keg.brand}
             price={keg.price}
             alchoholcontent={keg.alchoholcontent}
-            availablepints={keg.availablepints}
+            buyPint={keg.buyPint}
             currentRouterPath={props.currentRouterPath}
             key={keg.id} />
         )}
@@ -29,7 +29,9 @@ function KegList(props){
 
   KegList.propTypes = {
     kegList: PropTypes.array,
-    currentRouterPath: PropTypes.string
+    currentRouterPath: PropTypes.string,
+    buyPint: PropTypes.func
+
   };
 
   export default KegList;

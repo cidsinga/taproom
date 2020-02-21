@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 
 
 function Keg(props){
+
+  function onFinalBuyPint() {
+    props.onBuyPint(props.id)
+  }
   var kegStyle = {
     textAlign: 'center',
     textDecoration: 'underline',
@@ -12,12 +16,12 @@ function Keg(props){
       <h3>{props.brand} - {props.name}</h3>
       <p><em>${props.price}/pint</em></p>
       <p><em>{props.alchoholcontent}% ABV</em></p>
-      <p><em>{props.availablepints}Pints Available</em></p>
+      <p><em>{props.buyPint}Pints Available</em></p>
       <hr/>
     </div>
     if (props.currentRouterPath === '/admin'){
       return (
-        <div onClick={() => {alert('hey, you just clicked the keg belonging to ' + props.name);}}>
+        <div onClick={() => {alert('hey, you just clicked the keg named ' + props.name);}}>
           {kegInformation}
         </div>
     );
@@ -25,6 +29,8 @@ function Keg(props){
     return (
       <div>
         {kegInformation}
+        {/* <p onClick={onFinalBuyPint}>Buy A Pint!</p> */}
+        
       </div>
     );
   }
@@ -35,7 +41,7 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   alchoholcontent: PropTypes.string.isRequired,
-  availablepints: PropTypes.number.isRequired,
+  buyPint: PropTypes.number,
   currentRouterPath: PropTypes.string
 
 
