@@ -32,7 +32,21 @@ function Header(){
     <h1 style={bannerText}> The Vanguard Taproom </h1>
     <div style={menuText}>
     <Link to="/">Home</Link> | <Link to="/newkeg">Create New Keg</Link>
-    
+
+    {/*  if (props.currentRouterPath === '/admin'){
+        return (
+          <div>
+            <Link to="/">Home</Link> | <Link to="/newkeg">Create New Keg</Link>
+          </div>
+      );
+    } else {
+      return (
+        <div>
+        <Link to="/">Home</Link>           
+        </div>
+      );
+    }  */}
+
 
 
 
