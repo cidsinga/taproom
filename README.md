@@ -5,7 +5,7 @@
 ## Description
 Site for a fictional taproom, tracks inventory of beers on tap.  Currently there is a general path and an admin path.  Both function the same currently, though in the future I will only allow the admin path to create kegs.
 
-![project routes](/taproomroutes1.jpg)
+![project routes](/taproom-routes.png)
 
 
 
